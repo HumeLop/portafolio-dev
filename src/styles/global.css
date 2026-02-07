@@ -1,1 +1,422 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tailwind-animations';
+
+@theme {
+  /* Color Palette - Blue Gaming Theme */
+  --color-dark-blue: #0f172a;
+  --color-navy: #1e293b;
+  --color-blue-electric: #3b82f6;
+  --color-blue-bright: #60a5fa;
+  --color-cyan: #06b6d4;
+  --color-cyan-light: #22d3ee;
+  --color-accent: #a855f7;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Custom Animations from tailwind-animations.com style */
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-in-top: slide-in-top 0.6s ease-out;
+  --animate-slide-in-bottom: slide-in-bottom 0.6s ease-out;
+  --animate-slide-in-left: slide-in-left 0.6s ease-out;
+  --animate-slide-in-right: slide-in-right 0.6s ease-out;
+  --animate-zoom-in: zoom-in 0.6s ease-out;
+  --animate-bounce-in: bounce-in 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+  --animate-rotate-360: rotate-360 1s linear infinite;
+  --animate-pulsing: pulsing 2s ease-in-out infinite;
+  --animate-jelly: jelly 0.6s ease-in-out;
+  --animate-vertical-bounce: vertical-bounce 1.5s ease-in-out infinite;
+
+  @keyframes jelly {
+    0% {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes rotate-360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pulsing {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-top {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-in-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+.cursor-pixel {
+  cursor: default;
+}
+
+.cursor-pixel a,
+.cursor-pixel button {
+  cursor: pointer;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: none;
+}
+
+.mono-font {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Gaming Stats/Progress Bars */
+.stat-bar {
+  height: 24px;
+  background: var(--color-dark-blue);
+  border: 3px solid var(--color-blue-electric);
+  position: relative;
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-blue-electric) 0%, var(--color-cyan) 100%);
+  position: relative;
+  transition: width 1s ease-out;
+}
+
+.stat-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+}
+
+/* Notebook & Pixel Utilities */
+.pixel-border {
+  border: 3px solid var(--color-blue-electric);
+  box-shadow:
+    0 0 0 1px var(--color-dark-blue),
+    6px 6px 0 0 rgba(59, 130, 246, 0.3);
+  image-rendering: pixelated;
+}
+
+.pixel-button {
+  border: 3px solid var(--color-dark-blue);
+  background: var(--color-cyan);
+  color: var(--color-dark-blue);
+  padding: 12px 24px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-shadow:
+    4px 4px 0 var(--color-blue-electric),
+    0 0 20px rgba(59, 130, 246, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.pixel-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow:
+    2px 2px 0 var(--color-blue-electric),
+    0 0 30px rgba(59, 130, 246, 0.5);
+  background: var(--color-cyan-light);
+}
+
+.pixel-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.notebook-holes-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 40px;
+}
+
+.spiral-ring {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #5a6a7d, #2d3748);
+  box-shadow:
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid #1a202c;
+}
+
+.grid-paper {
+  background-color: #f8fafc;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(59, 130, 246, 0.05) 19px,
+      rgba(59, 130, 246, 0.05) 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(59, 130, 246, 0.05) 19px,
+      rgba(59, 130, 246, 0.05) 20px
+    );
+}
+
+.pixel-grid {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.notebook-line {
+  border-left: 2px solid #60a5fa;
+  position: relative;
+}
+
+.notebook-shadow {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    6px 6px 0 var(--color-blue-electric);
+}
+
+/* Animations & States */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--color-blue-electric);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--color-blue-bright),
+      0 0 30px var(--color-cyan);
+  }
+}
+
+.blink {
+  animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-blue);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-blue-electric);
+  border: 2px solid var(--color-dark-blue);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyan);
+}
+
+.tab {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  box-shadow:
+    -2px 0 4px rgba(0, 0, 0, 0.1),
+    inset 1px 0 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab:hover {
+  transform: rotate(180deg) translateX(-4px);
+  box-shadow:
+    -4px 0 8px rgba(0, 0, 0, 0.15),
+    inset 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Gaming UI Elements */
+.level-badge {
+  background: var(--color-blue-electric);
+  border: 3px solid var(--color-dark-blue);
+  box-shadow:
+    0 0 0 3px var(--color-blue-electric),
+    0 4px 0 var(--color-dark-blue),
+    0 0 20px rgba(59, 130, 246, 0.5);
+  padding: 8px 16px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--color-dark-blue);
+  display: inline-block;
+}
+
+/* Scroll to Top Button */
+#scroll-to-top {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+#scroll-to-top.show {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#scroll-to-top:hover {
+  transform: translateY(-2px);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,3 +1,7 @@
+---
+import { personalInfo } from '../data/portfolio'
+---
+
 <section
   id="about"
   class="min-h-screen bg-linear-to-br from-blue-950 via-slate-950 to-blue-950 py-20 px-4 relative flex items-center justify-center"
@@ -6,21 +10,11 @@
   <div class="absolute inset-0 pixel-grid opacity-20"></div>
 
   <div
-    class="max-w-5xl w-full bg-linear-to-br from-blue-100 to-cyan-50 relative overflow-hidden"
-    style="border-radius: 16px; box-shadow: 0 25px 80px rgba(59, 130, 246, 0.5), 0 0 0 4px var(--color-blue-electric), 0 0 40px rgba(59, 130, 246, 0.3);"
+    class="max-w-5xl w-full bg-linear-to-br from-blue-100 to-cyan-50 relative overflow-hidden rounded-2xl border-3 md:border-4 border-blue-500 notebook-shadow"
   >
     <!-- Spiral rings at top -->
     <div class="notebook-holes-top bg-blue-900 border-b border-blue-700">
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
-      <div class="spiral-ring"></div>
+      {[...Array(10)].map(() => <div class="spiral-ring" />)}
     </div>
 
     <!-- Blue margin line -->
@@ -67,15 +61,11 @@
 
       <!-- Title - Pixel Font -->
       <h2
-        class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-2 pixel-font"
-        style="line-height: 1.2; letter-spacing: 0.05em;"
+        class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-2 pixel-font leading-tight tracking-wider"
       >
-        HUMBERTO<br />LOPEZ
+        {personalInfo.name}<br />{personalInfo.lastName.split(' ')[0]}
       </h2>
-      <div
-        class="w-24 md:w-32 h-1 bg-linear-to-r from-blue-500 to-cyan-400 mb-6 md:mb-8"
-        style="box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);"
-      >
+      <div class="w-24 md:w-32 h-1 bg-linear-to-r from-blue-500 to-cyan-400 mb-6 md:mb-8 shadow-sm">
       </div>
 
       <!-- Subtitle -->
@@ -83,7 +73,8 @@
         class="mono-font text-blue-900 text-base md:text-lg mb-4 md:mb-6 flex items-center gap-2 font-bold"
       >
         <span class="w-2 h-2 md:w-3 md:h-3 bg-cyan-400 inline-block"></span>
-        <span>{'>'}</span> Fullstack Developer | Angular Developer
+        <span>{'>'}</span>
+        {personalInfo.role.split('|')[0].trim()} | {personalInfo.role.split('|')[1].trim()}
       </p>
 
       <!-- Description with pixel arrow -->
@@ -107,12 +98,15 @@
           OPEN FOR WORK
         </button>
         <button
-          class="pixel-button"
-          style="padding: 12px 20px; background: var(--color-blue-electric);"
+          class="pixel-button flex items-center gap-2"
+          style="padding: 12px 20px; background: #2563eb; border-color: #1e40af;"
         >
           📧 EMAIL
         </button>
-        <button class="pixel-button" style="padding: 12px 20px; background: var(--color-cyan);">
+        <button
+          class="pixel-button flex items-center gap-2"
+          style="padding: 12px 20px; background: #14b8a6; border-color: #0f766e;"
+        >
           🎮 PLAY
         </button>
       </div>

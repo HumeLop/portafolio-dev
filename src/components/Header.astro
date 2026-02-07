@@ -7,9 +7,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo - Pixel Art Style -->
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-3 animate-slide-in-left animate-duration-slow">
           <div
-            class="w-10 h-10 bg-linear-to-br from-blue-500 to-cyan-400 border-3 border-cyan-600 flex items-center justify-center pixel-border pulse-glow relative"
+            class="w-10 h-10 bg-linear-to-br from-blue-500 to-cyan-400 border-2 md:border-3 border-cyan-600 flex items-center justify-center pixel-border pulse-glow relative"
           >
             <div class="w-4 h-4 bg-cyan-300 border-2 border-blue-900"></div>
           </div>
@@ -22,7 +22,7 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-1">
+        <div class="hidden md:flex space-x-1 animate-slide-in-top animate-duration-normal">
           <a
             href="#home"
             class="mono-font text-cyan-400 hover:text-cyan-300 transition px-4 py-2 border-2 border-transparent hover:border-cyan-400 hover:bg-blue-950/50 font-bold text-sm"
@@ -45,7 +45,14 @@
             {'>'} PROJECTS
           </a>
           <a
-            href="#inventory"
+            href="#experience"
+            class="mono-font text-blue-300 hover:text-cyan-300 transition px-4 py-2 border-2 border-transparent hover:border-cyan-400 hover:bg-blue-950/50 font-bold text-sm"
+            style="transition: all 0.2s ease;"
+          >
+            {'>'} EXPERIENCE
+          </a>
+          <a
+            href="#contact"
             class="mono-font text-blue-300 hover:text-cyan-300 transition px-4 py-2 border-2 border-transparent hover:border-cyan-400 hover:bg-blue-950/50 font-bold text-sm"
             style="transition: all 0.2s ease;"
           >
@@ -55,7 +62,7 @@
 
         <!-- CTA Button - Pixel Style -->
         <button
-          class="pixel-button hidden md:block pulse-glow"
+          class="pixel-button hidden md:block pulse-glow animate-slide-in-right animate-duration-slow hover:animate-jelly"
           style="padding: 8px 16px; font-size: 8px;"
         >
           SAVE GAME
@@ -64,7 +71,7 @@
         <!-- Mobile Menu Button -->
         <button
           id="mobile-menu-btn"
-          class="md:hidden w-10 h-10 border-3 border-cyan-400 bg-blue-950 hover:bg-blue-900 flex flex-col items-center justify-center gap-1 transition"
+          class="md:hidden w-10 h-10 border-2 md:border-3 border-cyan-400 bg-blue-950 hover:bg-blue-900 flex flex-col items-center justify-center gap-1 transition"
           aria-label="Toggle menu"
         >
           <span class="block w-5 h-0.5 bg-cyan-400"></span>
@@ -96,7 +103,13 @@
           {'>'} PROJECTS
         </a>
         <a
-          href="#inventory"
+          href="#experience"
+          class="block mono-font text-blue-300 hover:text-cyan-300 py-2 px-3 border-2 border-transparent hover:border-cyan-400 hover:bg-blue-950/50 font-bold transition"
+        >
+          {'>'} EXPERIENCE
+        </a>
+        <a
+          href="#contact"
           class="block mono-font text-blue-300 hover:text-cyan-300 py-2 px-3 border-2 border-transparent hover:border-cyan-400 hover:bg-blue-950/50 font-bold transition"
         >
           {'>'} CONTACT

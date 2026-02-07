@@ -7,8 +7,12 @@
   },
   "files": {
     "includes": [
-      "**",
-      "!!**/dist"
+      "**/*.astro",
+      "**/*.ts",
+      "**/*.js",
+      "**/*.json",
+      "!!**/dist",
+      "!!**/*.css"
     ]
   },
   "formatter": {
@@ -22,6 +26,11 @@
       "correctness": {
         "noUnusedImports": "off"
       }
+    }
+  },
+  "css": {
+    "linter": {
+      "enabled": false
     }
   },
   "javascript": {
