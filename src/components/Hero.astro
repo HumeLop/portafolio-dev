@@ -26,18 +26,19 @@ import { mainStats, personalInfo, socialLinks, specialSkills } from '../data/por
   </div>
 
   <div class="max-w-6xl w-full relative z-10 animate-fade-in animate-duration-slow">
-    <div
-      class="bg-linear-to-br from-blue-100 to-cyan-50 relative overflow-hidden rounded-2xl border-3 md:border-4 border-blue-500 notebook-shadow animate-zoom-in"
-    >
-      <!-- Spiral rings at top -->
-      <div class="notebook-holes-top bg-blue-900 border-b border-blue-700">
-        {[...Array(10)].map(() => <div class="spiral-ring" />)}
-      </div>
+    <!-- Gaming Retro Container -->
+    <div class="relative">
+      <!-- Shadow layer -->
+      <div class="absolute inset-0 border-4 border-cyan-400 translate-x-2 translate-y-2 rounded-lg"></div>
+      <!-- Main container -->
+      <div class="bg-blue-900/40 backdrop-blur-sm border-4 border-cyan-400 rounded-lg p-6 md:p-12 lg:p-16 relative">
+        <!-- Decorative corner elements -->
+        <div class="absolute top-4 left-4 w-8 h-8 border-l-4 border-t-4 border-cyan-400"></div>
+        <div class="absolute top-4 right-4 w-8 h-8 border-r-4 border-t-4 border-cyan-400"></div>
+        <div class="absolute bottom-4 left-4 w-8 h-8 border-l-4 border-b-4 border-cyan-400"></div>
+        <div class="absolute bottom-4 right-4 w-8 h-8 border-r-4 border-b-4 border-cyan-400"></div>
 
-      <!-- Blue margin line -->
-      <div class="absolute left-20 top-16 bottom-0 notebook-line opacity-50"></div>
-
-      <div class="grid-paper p-6 md:p-12 lg:p-16 pt-16 md:pt-24 relative">
+        <div>
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <!-- Left: Character Avatar with Pixel Border -->
           <div class="relative animate-slide-in-left">
@@ -63,7 +64,7 @@ import { mainStats, personalInfo, socialLinks, specialSkills } from '../data/por
                 class="bg-slate-950 border-2 md:border-3 border-blue-500 p-4 md:p-6 pixel-border animate-slide-in-bottom"
                 style="animation-delay: 300ms;"
               >
-                <h3 class="pixel-font text-[10px] md:text-xs text-cyan-400 mb-3 md:mb-4">
+                <h3 class="pixel-font text-xs md:text-sm text-cyan-400 mb-3 md:mb-4">
                   ⚡ PLAYER PROFILE
                 </h3>
                 <div class="space-y-2 md:space-y-3 mono-font text-xs md:text-sm">
@@ -98,16 +99,16 @@ import { mainStats, personalInfo, socialLinks, specialSkills } from '../data/por
 
             <!-- Social Links - Gaming Style -->
             <div class="mt-4 md:mt-6 animate-slide-in-bottom" style="animation-delay: 500ms;">
-              <div class="text-center pixel-font text-[10px] md:text-xs text-blue-400 mb-3 md:mb-4">
-                ▼ SOCIAL LINKS ▼
-              </div>
+               <div class="text-center pixel-font text-xs md:text-sm text-blue-400 mb-3 md:mb-4">
+                 ▼ SOCIAL LINKS ▼
+               </div>
               <div class="flex justify-center gap-2 md:gap-4">
                 {
                   socialLinks.map(link => (
                     <a
                       href={link.url}
                       target={link.url.startsWith('http') ? '_blank' : undefined}
-                      class="w-12 h-12 md:w-14 md:h-14 bg-blue-950 border-2 md:border-3 border-blue-500 hover:border-cyan-400 flex items-center justify-center text-lg md:text-xl transition-all hover:scale-110 hover:shadow-lg hover:shadow-cyan-400/50 pixel-border"
+                      class="w-14 h-14 md:w-16 md:h-16 bg-blue-950 border-2 md:border-3 border-blue-500 hover:border-cyan-400 flex items-center justify-center text-xl md:text-2xl transition-all hover:scale-110 hover:shadow-lg hover:shadow-cyan-400/50 pixel-border"
                     >
                       <span class="text-cyan-400">{link.icon}</span>
                     </a>
@@ -132,103 +133,113 @@ import { mainStats, personalInfo, socialLinks, specialSkills } from '../data/por
             <!-- Name - Pixel Art Style -->
             <div class="animate-slide-in-top" style="animation-delay: 200ms;">
               <h1
-                class="pixel-font text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-2 leading-tight"
+                class="pixel-font text-2xl md:text-3xl lg:text-4xl text-cyan-400 mb-2 leading-tight"
               >
                 {personalInfo.name}
                 <br />
-                <span class="text-blue-600">{personalInfo.lastName}</span>
+                <span class="text-blue-400">{personalInfo.lastName}</span>
               </h1>
-              <p class="mono-font text-blue-800 text-xs md:text-sm font-bold">
+              <p class="mono-font text-cyan-300 text-xs md:text-sm font-bold">
                 {'>'}
                 {personalInfo.role}
               </p>
-              <div class="w-full h-1 bg-linear-to-r from-blue-500 via-cyan-400 to-transparent mt-2">
+              <div class="w-full h-1 bg-linear-to-r from-cyan-400 via-blue-400 to-transparent mt-2">
               </div>
             </div>
 
             <!-- Bio Log - Gaming Terminal Style -->
             <div
-              class="bg-blue-900/10 border-l-3 md:border-l-4 border-blue-500 p-4 md:p-6 backdrop-blur-sm animate-fade-in"
+              class="bg-blue-900/30 border-l-3 md:border-l-4 border-cyan-400 p-4 md:p-6 backdrop-blur-sm animate-fade-in"
               style="animation-delay: 400ms;"
             >
-              <h3 class="pixel-font text-[10px] md:text-xs text-blue-600 mb-2 md:mb-3">
-                ⚡ BIO_LOG.TXT
-              </h3>
-              <p class="mono-font text-slate-800 text-sm md:text-base leading-relaxed">
+               <h3 class="pixel-font text-xs md:text-sm text-cyan-400 mb-2 md:mb-3">
+                 ⚡ BIO_LOG.TXT
+               </h3>
+              <p class="mono-font text-cyan-200 text-sm md:text-base leading-relaxed">
                 {'>'}
                 {personalInfo.bio}
               </p>
             </div>
 
-            <!-- Main Stats - Gaming RPG Style -->
+            <!-- Main Skills - Gaming RPG Style -->
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 animate-slide-in-bottom"
+              class="animate-slide-in-bottom"
               style="animation-delay: 600ms;"
             >
-              <div>
-                <h4
-                  class="pixel-font text-[10px] md:text-xs text-blue-600 mb-3 md:mb-4 flex items-center gap-2"
-                >
-                  <span class="w-2 h-2 md:w-3 md:h-3 bg-blue-500"></span>
-                  MAIN STATS
-                </h4>
+              <h4
+                class="pixel-font text-xs md:text-sm text-cyan-400 mb-3 md:mb-4 flex items-center gap-2"
+              >
+                <span class="w-2 h-2 md:w-3 md:h-3 bg-cyan-400"></span>
+                SKILLS UNLOCKED
+              </h4>
 
-                <div class="space-y-3 md:space-y-4">
-                  {
-                    mainStats.map(stat => (
-                      <div>
-                        <div class="flex justify-between mb-2 mono-font text-xs">
-                          <span class="text-blue-700">{stat.name}</span>
-                          <span class="text-blue-600 font-bold">LVL {stat.level}</span>
+              <div class="grid grid-cols-2 gap-4">
+                {
+                  mainStats.map((stat, index) => (
+                    <div class="relative">
+                      {/* Borde retro */}
+                      <div class="absolute inset-0 border-2 border-cyan-400 translate-x-1 translate-y-1"></div>
+                      <div class="bg-blue-900/80 border-2 border-cyan-400 p-3 relative">
+                        {/* Icono */}
+                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-cyan-400 flex items-center justify-center text-base font-bold text-blue-900">
+                          {index === 0 ? '⚔️' : index === 1 ? '🔮' : index === 2 ? '⚡' : '☕'}
                         </div>
-                        <div class="stat-bar border-blue-400">
-                          <div class="stat-bar-fill" style={`width: ${stat.level}%`} />
+                        <div class="flex flex-col">
+                          <span class="pixel-font text-sm text-cyan-300 mb-2">{stat.name}</span>
+                          <div class="flex gap-1 mb-2 justify-center">
+                            {[...Array(5)].map((_, i) => (
+                              <span class={`text-sm ${i < stat.level ? 'text-yellow-300' : 'text-blue-700'}`}>★</span>
+                            ))}
+                          </div>
+                          <div class="text-center">
+                            <span class="mono-font text-[10px] text-yellow-300 font-bold border border-yellow-300 px-2 py-1">LVL: {stat.label}</span>
+                          </div>
                         </div>
                       </div>
-                    ))
-                  }
-                </div>
-              </div>
-
-              <div>
-                <h4
-                  class="pixel-font text-[10px] md:text-xs text-purple-600 mb-3 md:mb-4 flex items-center gap-2"
-                >
-                  <span class="w-2 h-2 md:w-3 md:h-3 bg-purple-500"></span>
-                  SPECIAL SKILLS
-                </h4>
-
-                <div class="space-y-3 md:space-y-4">
-                  {
-                    specialSkills.map(skill => (
-                      <div>
-                        <div class="flex justify-between mb-2 mono-font text-xs">
-                          <span class="text-blue-700">{skill.name}</span>
-                          <span class="text-blue-600 font-bold">LVL {skill.level}</span>
+                    </div>
+                  ))
+                }
+                {
+                  specialSkills.map((skill, index) => (
+                    <div class="relative">
+                      {/* Borde retro */}
+                      <div class="absolute inset-0 border-2 border-purple-400 translate-x-1 translate-y-1"></div>
+                      <div class="bg-purple-900/80 border-2 border-purple-400 p-3 relative">
+                        {/* Icono */}
+                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-purple-400 flex items-center justify-center text-base font-bold text-purple-900">
+                          {index === 0 ? '🗄️' : '🐍'}
                         </div>
-                        <div class="stat-bar border-blue-400">
-                          <div class="stat-bar-fill" style={`width: ${skill.level}%`} />
+                        <div class="flex flex-col">
+                          <span class="pixel-font text-sm text-purple-300 mb-2">{skill.name}</span>
+                          <div class="flex gap-1 mb-2 justify-center">
+                            {[...Array(5)].map((_, i) => (
+                              <span class={`text-sm ${i < skill.level ? 'text-yellow-300' : 'text-purple-700'}`}>★</span>
+                            ))}
+                          </div>
+                          <div class="text-center">
+                            <span class="mono-font text-[10px] text-yellow-300 font-bold border border-yellow-300 px-2 py-1">LVL: {skill.label}</span>
+                          </div>
                         </div>
                       </div>
-                    ))
-                  }
-                </div>
+                    </div>
+                  ))
+                }
               </div>
             </div>
 
             <!-- Inventory (Tech Stack) - Pixel Icons -->
             <div class="animate-slide-in-bottom" style="animation-delay: 800ms;">
               <h4
-                class="pixel-font text-[10px] md:text-xs text-blue-600 mb-3 md:mb-4 flex items-center gap-2"
+                class="pixel-font text-xs md:text-sm text-cyan-400 mb-3 md:mb-4 flex items-center gap-2"
               >
-                <span class="w-2 h-2 md:w-3 md:h-3 bg-blue-500"></span>
+                <span class="w-2 h-2 md:w-3 md:h-3 bg-cyan-400"></span>
                 INVENTORY (TECH STACK)
               </h4>
               <div class="flex flex-wrap gap-2 md:gap-3">
                 {
                   ['JAVA SPRING', 'TS', 'JS', 'ANGULAR', 'REACT', 'PY', 'APEX ORACLE', 'DB'].map(
                     tech => (
-                      <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-950 border-2 md:border-3 border-blue-500 hover:border-cyan-400 flex items-center justify-center mono-font text-[8px] md:text-[10px] transition-all cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-cyan-400/50 font-bold text-cyan-400 text-center leading-tight pixel-border">
+                      <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-950 border-2 md:border-3 border-blue-500 hover:border-cyan-400 flex items-center justify-center mono-font text-xs md:text-sm transition-all cursor-pointer hover:scale-110 hover:shadow-lg hover:shadow-cyan-400/50 font-bold text-cyan-400 text-center leading-tight pixel-border">
                         {tech.includes(' ') ? (
                           <>
                             {tech.split(' ')[0]}

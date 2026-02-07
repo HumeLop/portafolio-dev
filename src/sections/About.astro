@@ -9,124 +9,126 @@ import { personalInfo } from '../data/portfolio'
   <!-- Pixel grid background -->
   <div class="absolute inset-0 pixel-grid opacity-20"></div>
 
-  <div
-    class="max-w-5xl w-full bg-linear-to-br from-blue-100 to-cyan-50 relative overflow-hidden rounded-2xl border-3 md:border-4 border-blue-500 notebook-shadow"
-  >
-    <!-- Spiral rings at top -->
-    <div class="notebook-holes-top bg-blue-900 border-b border-blue-700">
-      {[...Array(10)].map(() => <div class="spiral-ring" />)}
-    </div>
-
-    <!-- Blue margin line -->
-    <div class="absolute left-20 top-16 bottom-0 notebook-line"></div>
-
-    <!-- Tabs - Gaming Style -->
-    <div class="hidden md:flex absolute right-0 top-32 flex-col gap-2 z-20">
-      <div
-        class="bg-blue-100 border-2 md:border-3 border-blue-500 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-blue-900 shadow-md hover:shadow-lg"
-      >
-        WORK
-      </div>
-      <div
-        class="bg-blue-200 border-2 md:border-3 border-blue-500 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-blue-900 shadow-md hover:shadow-lg"
-      >
-        ABOUT
-      </div>
-      <div
-        class="bg-cyan-400 border-2 md:border-3 border-cyan-500 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-slate-900 shadow-md hover:shadow-lg"
-      >
-        RESUME
-      </div>
-      <div
-        class="bg-blue-500 border-2 md:border-3 border-blue-600 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-white shadow-lg pulse-glow"
-      >
-        SKETCHBOOK
-      </div>
-    </div>
-
-    <div class="grid-paper p-6 md:p-12 lg:p-20 pt-16 md:pt-24 relative">
-      <!-- Pixel Icon -->
-      <div
-        class="w-16 h-16 md:w-20 md:h-20 bg-blue-500 flex items-center justify-center text-2xl md:text-3xl mb-4 md:mb-6 floating relative pixel-border"
-        style="border-radius: 0; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4), 4px 4px 0 var(--color-dark-blue);"
-      >
-        <div class="absolute inset-0 pixel-grid opacity-20"></div>
-        <span class="relative z-10">✏️</span>
+  <!-- Gaming Retro Container -->
+  <div class="max-w-5xl w-full relative">
+    <!-- Shadow layer -->
+    <div class="absolute inset-0 border-4 border-cyan-400 translate-x-2 translate-y-2 rounded-lg"></div>
+    <!-- Main container -->
+    <div class="bg-blue-900/40 backdrop-blur-sm border-4 border-cyan-400 rounded-lg p-6 md:p-12 lg:p-20 relative">
+      <!-- Tabs - Gaming Style -->
+      <div class="hidden md:flex absolute right-0 top-32 flex-col gap-2 z-20">
+        <div
+          class="bg-blue-900 border-2 md:border-3 border-cyan-400 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-cyan-400 shadow-md hover:shadow-lg hover:bg-blue-800 transition"
+        >
+          WORK
+        </div>
+        <div
+          class="bg-blue-800 border-2 md:border-3 border-cyan-400 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-cyan-400 shadow-md hover:shadow-lg hover:bg-blue-700 transition"
+        >
+          ABOUT
+        </div>
+        <div
+          class="bg-cyan-400 border-2 md:border-3 border-cyan-300 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-blue-900 shadow-md hover:shadow-lg"
+        >
+          RESUME
+        </div>
+        <div
+          class="bg-blue-500 border-2 md:border-3 border-cyan-400 px-2 md:px-3 py-6 md:py-8 tab mono-font text-[10px] md:text-xs font-bold text-white shadow-lg pulse-glow"
+        >
+          SKETCHBOOK
+        </div>
       </div>
 
-      <!-- Level Badge -->
-      <div class="inline-block level-badge mb-6 md:mb-8 text-[10px] md:text-xs">
-        LEVEL 1 - ABOUT ME
-      </div>
+      <div class="relative">
+        <!-- Pixel Icon -->
+        <div
+          class="w-20 h-20 md:w-24 md:h-24 bg-cyan-400 flex items-center justify-center text-3xl md:text-4xl mb-4 md:mb-6 floating relative pixel-border"
+          style="border-radius: 0; box-shadow: 0 4px 12px rgba(34, 211, 238, 0.4), 4px 4px 0 var(--color-dark-blue);"
+        >
+          <div class="absolute inset-0 pixel-grid opacity-20"></div>
+          <span class="relative z-10">✏️</span>
+        </div>
 
-      <!-- Title - Pixel Font -->
-      <h2
-        class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-2 pixel-font leading-tight tracking-wider"
-      >
-        {personalInfo.name}<br />{personalInfo.lastName.split(' ')[0]}
-      </h2>
-      <div class="w-24 md:w-32 h-1 bg-linear-to-r from-blue-500 to-cyan-400 mb-6 md:mb-8 shadow-sm">
-      </div>
+        <!-- Level Badge -->
+        <div class="inline-block mb-6 md:mb-8">
+          <div class="bg-blue-900/60 border-2 border-cyan-400 px-4 py-2 relative">
+            <div class="absolute -top-1 -left-1 w-2 h-2 bg-cyan-400"></div>
+            <div class="absolute -top-1 -right-1 w-2 h-2 bg-cyan-400"></div>
+            <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-cyan-400"></div>
+            <div class="absolute -bottom-1 -right-1 w-2 h-2 bg-cyan-400"></div>
+            <span class="pixel-font text-[10px] md:text-xs text-cyan-400">⚡ LEVEL 1 - ABOUT ME</span>
+          </div>
+        </div>
 
-      <!-- Subtitle -->
-      <p
-        class="mono-font text-blue-900 text-base md:text-lg mb-4 md:mb-6 flex items-center gap-2 font-bold"
-      >
-        <span class="w-2 h-2 md:w-3 md:h-3 bg-cyan-400 inline-block"></span>
-        <span>{'>'}</span>
-        {personalInfo.role.split('|')[0].trim()} | {personalInfo.role.split('|')[1].trim()}
-      </p>
+        <!-- Title - Pixel Font -->
+        <h2
+          class="text-3xl md:text-5xl lg:text-6xl font-black text-cyan-400 mb-2 pixel-font leading-tight tracking-wider"
+        >
+          {personalInfo.name}<br />{personalInfo.lastName.split(' ')[0]}
+        </h2>
+        <div class="w-24 md:w-32 h-1 bg-linear-to-r from-cyan-400 to-blue-400 mb-6 md:mb-8 shadow-sm shadow-cyan-400/50">
+        </div>
 
-      <!-- Description with pixel arrow -->
-      <div class="relative mb-6 md:mb-8">
+        <!-- Subtitle -->
         <p
-          class="text-slate-800 text-lg md:text-xl leading-relaxed max-w-2xl font-medium mono-font"
+          class="mono-font text-cyan-300 text-base md:text-lg mb-4 md:mb-6 flex items-center gap-2 font-bold"
         >
-          {'>'} I build digital products that feel handmade.
+          <span class="w-2 h-2 md:w-3 md:h-3 bg-cyan-400 inline-block"></span>
+          <span>{'>'}</span>
+          {personalInfo.role.split('|')[0].trim()} | {personalInfo.role.split('|')[1].trim()}
         </p>
-        <!-- Pixel-style arrow -->
-        <div class="hidden md:block absolute -right-8 -bottom-4 text-4xl text-cyan-400">→</div>
-        <p class="mono-font text-blue-700 mt-3 md:mt-4 text-sm md:text-base">
-          {'>'} Currently crafting pixel-perfect interfaces for the web 3.0 era.
-        </p>
-      </div>
 
-      <!-- Buttons - Pixel Gaming Style -->
-      <div class="flex flex-wrap gap-4 mb-12">
-        <button class="pixel-button flex items-center gap-2" style="padding: 12px 20px;">
-          <span class="w-2 h-2 bg-green-400 rounded-full blink"></span>
-          OPEN FOR WORK
-        </button>
-        <button
-          class="pixel-button flex items-center gap-2"
-          style="padding: 12px 20px; background: #2563eb; border-color: #1e40af;"
-        >
-          📧 EMAIL
-        </button>
-        <button
-          class="pixel-button flex items-center gap-2"
-          style="padding: 12px 20px; background: #14b8a6; border-color: #0f766e;"
-        >
-          🎮 PLAY
-        </button>
-      </div>
-
-      <!-- Dotted line - Pixel style -->
-      <div class="border-t-2 border-dashed border-blue-400 my-8"></div>
-
-      <!-- Footer info - Terminal style -->
-      <div class="flex items-center gap-8 text-sm mono-font text-blue-700 font-bold">
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 bg-blue-500 inline-block"></span>
-          <span>portfolio_v2.0</span>
+        <!-- Description with pixel arrow -->
+        <div class="relative mb-6 md:mb-8">
+          <p
+            class="text-cyan-200 text-lg md:text-xl leading-relaxed max-w-2xl font-medium mono-font"
+          >
+            {'>'} Ingeniero en Desarrollo y Gestión de Software con experiencia en tecnologías web y móvil.
+          </p>
+          <!-- Pixel-style arrow -->
+          <div class="hidden md:block absolute -right-8 -bottom-4 text-4xl text-cyan-400">→</div>
+          <p class="mono-font text-cyan-400 mt-3 md:mt-4 text-sm md:text-base">
+            {'>'} Desarrollando soluciones óptimas para el cliente AUDI México.
+          </p>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 bg-cyan-400 inline-block"></span>
-          <span>2023</span>
+
+        <!-- Buttons - Pixel Gaming Style -->
+        <div class="flex flex-wrap gap-4 mb-12">
+          <button class="pixel-button flex items-center gap-2" style="padding: 12px 20px;">
+            <span class="w-2 h-2 bg-green-400 rounded-full blink"></span>
+            OPEN FOR WORK
+          </button>
+          <button
+            class="pixel-button flex items-center gap-2"
+            style="padding: 12px 20px; background: #2563eb; border-color: #1e40af;"
+          >
+            📧 EMAIL
+          </button>
+          <button
+            class="pixel-button flex items-center gap-2"
+            style="padding: 12px 20px; background: #14b8a6; border-color: #0f766e;"
+          >
+            🎮 PLAY
+          </button>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 bg-purple-400 inline-block"></span>
-          <span>SETTINGS</span>
+
+        <!-- Dotted line - Pixel style -->
+        <div class="border-t-2 border-dashed border-cyan-400/50 my-8"></div>
+
+        <!-- Footer info - Terminal style -->
+        <div class="flex items-center gap-8 text-sm mono-font text-cyan-400 font-bold">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 bg-cyan-400 inline-block"></span>
+            <span>portfolio_v2.0</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 bg-blue-400 inline-block"></span>
+            <span>2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 bg-purple-400 inline-block"></span>
+            <span>SETTINGS</span>
+          </div>
         </div>
       </div>
     </div>

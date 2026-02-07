@@ -50,32 +50,27 @@ const btnMap = {
   <div class="absolute inset-0 pixel-grid opacity-20"></div>
 
   <div class="max-w-6xl w-full">
-    <!-- Notebook with spiral on top -->
-    <div
-      class="bg-linear-to-br from-white to-blue-50 relative notebook-shadow rounded-2xl border-3 md:border-4 border-blue-500"
-    >
-      <!-- Spiral rings at top -->
-      <div class="notebook-holes-top bg-blue-900 border-b border-blue-700">
-        {[...Array(10)].map(() => <div class="spiral-ring" />)}
-      </div>
-
-      <!-- Content -->
-      <div class="p-6 md:p-12 lg:p-16 pt-16 md:pt-20 relative pixel-grid">
+    <!-- Gaming Retro Container -->
+    <div class="relative">
+      <!-- Shadow layer -->
+      <div class="absolute inset-0 border-4 border-cyan-400 translate-x-2 translate-y-2 rounded-lg"></div>
+      <!-- Main container -->
+      <div class="bg-blue-900/40 backdrop-blur-sm border-4 border-cyan-400 rounded-lg p-6 md:p-12 relative">
         <div class="mb-8 md:mb-12">
           <h2
-            class="animate-vertical-bounce text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-2 pixel-font"
+            class="animate-vertical-bounce text-3xl md:text-4xl lg:text-5xl font-black text-cyan-400 mb-2 pixel-font"
             style="letter-spacing: 0.05em;"
           >
             PROJECT_LOG
           </h2>
           <p
-            class="mono-font text-blue-700 text-xs md:text-sm font-bold animate-slide-in-top"
+            class="mono-font text-cyan-300 text-xs md:text-sm font-bold animate-slide-in-top"
             style="animation-delay: 100ms;"
           >
             {'>'} v2.0 - collection_final
           </p>
           <div
-            class="w-full md:w-96 h-1 bg-linear-to-r from-blue-500 via-cyan-400 to-transparent mt-3 shadow-sm animate-fade-in"
+            class="w-full md:w-96 h-1 bg-linear-to-r from-cyan-400 via-blue-400 to-transparent mt-3 shadow-sm animate-fade-in shadow-cyan-400/50"
             style="animation-delay: 200ms;"
           >
           </div>
@@ -91,19 +86,19 @@ const btnMap = {
           </button>
           <button
             class="pixel-button text-[10px] md:text-xs"
-            style="padding: 6px 12px; background: #f8fafc; color: #3b82f6; border-color: #3b82f6;"
+            style="padding: 6px 12px; background: #1e3a8a; color: #22d3ee; border-color: #22d3ee;"
           >
             WEB
           </button>
           <button
             class="pixel-button text-[10px] md:text-xs"
-            style="padding: 6px 12px; background: #f8fafc; color: #3b82f6; border-color: #3b82f6;"
+            style="padding: 6px 12px; background: #1e3a8a; color: #22d3ee; border-color: #22d3ee;"
           >
             MOBILE
           </button>
           <button
             class="pixel-button text-[10px] md:text-xs"
-            style="padding: 6px 12px; background: #f8fafc; color: #3b82f6; border-color: #3b82f6;"
+            style="padding: 6px 12px; background: #1e3a8a; color: #22d3ee; border-color: #22d3ee;"
           >
             EXP
           </button>
@@ -118,13 +113,13 @@ const btnMap = {
                 style={`animation-duration: 2000ms; animation-delay: ${index * 200}ms; animation-iteration-count: infinite;`}
               >
                 {project.featured && (
-                  <div class="absolute top-3 left-3 md:top-4 md:left-4 level-badge z-10 px-2 py-1 text-[8px] animate-pulse">
+                  <div class="absolute top-3 left-3 md:top-4 md:left-4 level-badge z-10 px-2 py-1 text-[10px] animate-pulse">
                     FEATURED
                   </div>
                 )}
                 {project.status && (
                   <div
-                    class="absolute top-3 left-3 md:top-4 md:left-4 z-10 px-2 py-1 text-[8px] pixel-font"
+                    class="absolute top-3 left-3 md:top-4 md:left-4 z-10 px-2 py-1 text-[10px] pixel-font"
                     style="background: #ef4444; border: 2px solid #7f1d1d; color: white; text-shadow: 1px 1px 0 #7f1d1d;"
                   >
                     {project.status}
@@ -217,47 +212,47 @@ const btnMap = {
                   <div class="flex gap-2">
                     {project.liveDemo && (
                       <button
-                        class={`flex-1 py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold px-2 ${btnMap[project.color as keyof typeof btnMap]}`}
+                        class={`flex-1 py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold px-2 ${btnMap[project.color as keyof typeof btnMap]}`}
                       >
                         LIVE DEMO
                       </button>
                     )}
                     {project.code && (
                       <button
-                        class={`px-4 py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold bg-blue-900 text-cyan-400 border-blue-700 hover:bg-blue-800`}
+                        class={`px-4 py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold bg-blue-900 text-cyan-400 border-blue-700 hover:bg-blue-800`}
                       >
                         CODE
                       </button>
                     )}
                     {project.caseStudy && (
                       <button
-                        class={`flex-1 py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold px-2 ${btnMap[project.color as keyof typeof btnMap]}`}
+                        class={`flex-1 py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold px-2 ${btnMap[project.color as keyof typeof btnMap]}`}
                       >
                         CASE STUDY
                       </button>
                     )}
                     {project.preview && (
-                      <button class="px-4 py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold bg-slate-800 text-purple-400 border-slate-700 hover:bg-slate-700">
+                      <button class="px-4 py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold bg-slate-800 text-purple-400 border-slate-700 hover:bg-slate-700">
                         PREVIEW
                       </button>
                     )}
                     {project.link && (
                       <button
-                        class={`w-full py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold ${btnMap[project.color as keyof typeof btnMap]}`}
+                        class={`w-full py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold ${btnMap[project.color as keyof typeof btnMap]}`}
                       >
                         TRY IT OUT
                       </button>
                     )}
                     {project.github && (
                       <button
-                        class={`w-full py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold ${btnMap[project.color as keyof typeof btnMap]}`}
+                        class={`w-full py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold ${btnMap[project.color as keyof typeof btnMap]}`}
                       >
                         GITHUB
                       </button>
                     )}
                     {project.demo && (
                       <button
-                        class={`w-full py-2 pixel-font text-[8px] transition border-2 md:border-3 font-bold ${btnMap[project.color as keyof typeof btnMap]}`}
+                        class={`w-full py-2 pixel-font text-[10px] md:text-xs transition border-2 md:border-3 font-bold ${btnMap[project.color as keyof typeof btnMap]}`}
                       >
                         DEMO
                       </button>
@@ -271,16 +266,16 @@ const btnMap = {
 
         <!-- Pagination -->
         <div
-          class="flex justify-between items-center mt-12 pt-8 border-t border-slate-200 animate-fade-in"
+          class="flex justify-between items-center mt-12 pt-8 border-t border-cyan-400/30 animate-fade-in"
           style="animation-delay: 1s;"
         >
           <button
-            class="text-slate-400 mono-font text-sm font-bold hover:text-slate-600 transition"
+            class="text-cyan-400 mono-font text-sm font-bold hover:text-cyan-300 transition"
           >
             ← Prev
           </button>
-          <span class="mono-font text-slate-500 text-sm font-medium">Page 1 of 4</span>
-          <button class="text-slate-900 mono-font text-sm font-bold hover:text-blue-600 transition">
+          <span class="mono-font text-cyan-300 text-sm font-medium">Page 1 of 4</span>
+          <button class="text-cyan-400 mono-font text-sm font-bold hover:text-cyan-300 transition">
             Next Page →
           </button>
         </div>

@@ -21,14 +21,15 @@ export const socialLinks = [
 ];
 
 export const mainStats = [
-	{ name: "UI DESIGN", level: 85 },
-	{ name: "FRONTEND CODE", level: 92 },
-	{ name: "PROTOTYPING", level: 78 },
+	{ name: "ANGULAR", level: 5, label: "EXPERTO" },
+	{ name: "APEX ORACLE", level: 4, label: "AVANZADO" },
+	{ name: "TYPESCRIPT", level: 5, label: "EXPERTO" },
+	{ name: "JAVA", level: 3, label: "INTERMEDIO" },
 ];
 
 export const specialSkills = [
-	{ name: "LEADERSHIP", level: 65 },
-	{ name: "UX RESEARCH", level: 70 },
+	{ name: "SQL", level: 4, label: "AVANZADO" },
+	{ name: "PYTHON", level: 3, label: "INTERMEDIO" },
 ];
 
 export const projects = [
